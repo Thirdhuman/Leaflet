@@ -65,18 +65,16 @@ d3.json(plates, function (geoJson) {
     }).addTo(bounds);
 })
 
+// Map function
 
 function createMap(earthquakes) {
 
-  // Define streetmap and overlay layers
   var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?access_token=" + mapboxToken);
 
-  // Define a baseMaps object to hold our base layers
   var baseMaps = {
     "Street Map": streetmap
   };
 
-  // Define OverlayMaps object to hold our overlay layers
   var overlayMaps = {
     'Earthquakes': earthquakes,
     "Plate Boundaries": bounds,
